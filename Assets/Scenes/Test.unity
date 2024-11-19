@@ -151,8 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68ad8aef0f8ed364d841d2cc2d9edfa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  porto:
-  - {fileID: 7242881298126097543, guid: d260e19e44df4f148b73e4758822f53e, type: 3}
+  porto: {fileID: 7242881298126097543, guid: d260e19e44df4f148b73e4758822f53e, type: 3}
   yporto: 0
 --- !u!4 &170378484
 Transform:
@@ -289,11 +288,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4287473677101458038, guid: 765ac621677e9db4f85b0f108819d352, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.7945192
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4287473677101458038, guid: 765ac621677e9db4f85b0f108819d352, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.0592214
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4287473677101458038, guid: 765ac621677e9db4f85b0f108819d352, type: 3}
       propertyPath: m_LocalPosition.z
