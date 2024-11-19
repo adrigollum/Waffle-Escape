@@ -44,12 +44,20 @@ public class Touché : MonoBehaviour
 			{
 				transform.Translate(Vector3.up * -10 * Time.deltaTime);
 			}
-				
-
-			
-				
-
-			
 		}
+
+		if (GameObject.FindGameObjectWithTag("Player").GetComponent<WaffleControl>().mort == true)
+		{
+			if (this.tag == "haut" && transform.position.y >=0)
+			{
+				transform.Translate(Vector3.up * -6.25f * Time.deltaTime);
+			}
+			else if (this.tag == "bas" && transform.position.y <= 0)
+			{
+				transform.Translate(Vector3.up * 6.25f * Time.deltaTime);
+			}
+		}
+
+
 	}
 }

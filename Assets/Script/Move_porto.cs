@@ -18,13 +18,16 @@ public class Move_porto : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-		
-		
 
+
+		if (GameObject.FindGameObjectWithTag("Player").GetComponent<WaffleControl>().mort == true)
+		{
+			speed_porto = 0;
+
+		}
 		rb.velocity = Vector2.left * speed_porto;
 
-		
+
 
 
 		if (transform.position.x <= -13)

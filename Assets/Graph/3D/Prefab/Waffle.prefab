@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpSpeed: 5
+  mort: 0
 --- !u!54 &682479444468346849
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -94,10 +95,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.9737566
-  m_Height: 2.4773498
+  m_Radius: 0.82361645
+  m_Height: 2.0951748
   m_Direction: 1
-  m_Center: {x: -0.123344004, y: -0.09096789, z: 0}
+  m_Center: {x: -0.0073266625, y: 0.025049686, z: 0}
 --- !u!1001 &5127432999390914309
 PrefabInstance:
   m_ObjectHideFlags: 0

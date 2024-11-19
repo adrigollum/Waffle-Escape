@@ -55,7 +55,7 @@ public class Spawn_obs : MonoBehaviour
 
 		if (IsRun == true && delai >= 1f)
 		{
-			delai -= 10f * Time.deltaTime;
+			delai -= 1f * Time.deltaTime;
 			
 		}
 
@@ -68,7 +68,7 @@ public class Spawn_obs : MonoBehaviour
 
 		if (IsRun == false && delai <= 2f)
 		{
-			delai += 10f * Time.deltaTime;
+			delai += 1f * Time.deltaTime;
 		}
 
 		if (IsRun == false && porto_speed >= 3f)
@@ -101,19 +101,22 @@ public class Spawn_obs : MonoBehaviour
         for (; ; )
         {
 
+			if (GameObject.FindGameObjectWithTag("Player").GetComponent<WaffleControl>().mort == false)
+			{
+				var newObject = (GameObject)Instantiate(porto, posporto, Quaternion.identity, transform);
 
+				newObject.name = i.ToString();
+				GameObject.Find(i + "/Haut").name = i.ToString();
+				GameObject.Find(i + "/Bas").name = i.ToString();
 
+				i++;
+				
+			}
+			yield return new WaitForSeconds(delai);
 
 			// execute block of code here
-			var newObject = (GameObject) Instantiate(porto, posporto, Quaternion.identity, transform);
 
-			newObject.name = i.ToString();
-			GameObject.Find(i + "/Haut").name = i.ToString();
-			GameObject.Find(i + "/Bas").name = i.ToString();
-
-			i++;
-			yield return new WaitForSeconds(delai);
-        }
+		}
     }
 
 }
