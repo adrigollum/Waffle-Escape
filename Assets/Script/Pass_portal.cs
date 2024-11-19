@@ -23,8 +23,16 @@ public class Pass_portal : MonoBehaviour
 	{
 		if (other.gameObject.tag == "Player")
 		{
-			touche = true;
+			if (other.gameObject.GetComponent<WaffleControl>().mort == false)
+			{
+				touche = true;
+				GameObject.Find("Text (TMP)").GetComponent<Score>().score += 1;
+			}
+			
 		}
 		
 	}
+
+
+
 }

@@ -6,7 +6,7 @@ public class WaffleControl : MonoBehaviour
 {
     Rigidbody rb;
     [SerializeField] private float jumpSpeed = 5f;
-	private bool mort = false;
+	public bool mort = false;
 
 	void Start()
     {
