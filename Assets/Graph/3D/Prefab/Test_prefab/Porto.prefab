@@ -160,7 +160,7 @@ GameObject:
   - component: {fileID: 5053859242987909468}
   m_Layer: 0
   m_Name: Porto
-  m_TagString: Untagged
+  m_TagString: portal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

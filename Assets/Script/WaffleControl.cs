@@ -5,8 +5,9 @@ using UnityEngine;
 public class WaffleControl : MonoBehaviour
 {
     Rigidbody rb;
-    private float jumpSpeed = 5f;
-    void Start()
+    [SerializeField] private float jumpSpeed = 5f;
+
+	void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
@@ -18,10 +19,15 @@ public class WaffleControl : MonoBehaviour
         {
             Jump();
         }
-    }
+	}
 
     private void Jump()
     {
         rb.velocity = Vector2.up * jumpSpeed;
     }
+
+	
+		
+	
+	
 }

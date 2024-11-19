@@ -2,15 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using System.Linq;
 
 public class Spawn_obs : MonoBehaviour
 {
     [SerializeField] private GameObject porto;
     private Vector3 posporto;
+	
+	private bool IsRun = false;
+	[SerializeField] private float delai;
     [SerializeField] private float yporto;
+	private GameObject[] portoexiste;
+	private float portovit;
+	private float porto_speed = 3f;
 
-    // Start is called before the first frame update
-    void Start()
+	// Start is called before the first frame update
+	void Start()
     {
         posporto = transform.position + new Vector3(0, yporto, 0);        
         StartCoroutine("Spawner");
@@ -21,6 +28,8 @@ public class Spawn_obs : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
         yporto = UnityEngine.Random.Range(yporto-1, yporto+1);
         if (yporto >= 3)
         {
@@ -31,15 +40,64 @@ public class Spawn_obs : MonoBehaviour
             yporto = UnityEngine.Random.Range(yporto + 2, yporto + 0.1f);
         }
         posporto = transform.position + new Vector3(0, yporto, 0);
-    }
+
+		if (Input.GetMouseButton(1))
+			{
+				IsRun = true;
+
+			}
+
+			if (Input.GetMouseButtonUp(1))
+			{
+				IsRun = false;
+			}
+
+		if (IsRun == true && delai >= 1f)
+		{
+			delai -= 1f * Time.deltaTime;
+			if (porto_speed <= 10f)
+			{
+				porto_speed += 2f * Time.deltaTime;
+			}
+		}
+
+		if (IsRun == false && delai <= 2f)
+		{
+			delai += 1f * Time.deltaTime;
+			if (porto_speed >= 3f)
+			{
+
+				porto_speed -= 2f * Time.deltaTime;
+			}
+		}
+
+
+		
+
+		portoexiste = GameObject.FindGameObjectsWithTag("portal");
+
+		foreach (var portoexistes in portoexiste)
+		{
+			portoexistes.GetComponent<Move_porto>().speed_porto = porto_speed;
+			
+		}
+		
+
+	}
+
+
 
     IEnumerator Spawner()
     {
         for (; ; )
         {
-            // execute block of code here
-            Instantiate(porto, posporto, Quaternion.identity);
-            yield return new WaitForSeconds(2f);
+			
+			
+			
+
+			// execute block of code here
+			Instantiate(porto, posporto, Quaternion.identity, transform);
+            yield return new WaitForSeconds(delai);
         }
     }
 

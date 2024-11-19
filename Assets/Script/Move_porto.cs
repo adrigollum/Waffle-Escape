@@ -5,7 +5,8 @@ using UnityEngine;
 public class Move_porto : MonoBehaviour
 {
     Rigidbody rb;
-    private float speed_porto= 3f;
+    public float speed_porto= 3f;
+	private bool IsRun;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -14,8 +15,15 @@ public class Move_porto : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.velocity = Vector2.left * speed_porto;
-        if (transform.position.x <= -13)
+        
+		
+		
+
+		rb.velocity = Vector2.left * speed_porto;
+
+		Debug.Log(speed_porto);
+
+		if (transform.position.x <= -13)
         {
             Destroy(gameObject);
         }
