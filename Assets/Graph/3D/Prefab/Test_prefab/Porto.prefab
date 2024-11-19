@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6702050945651749677}
   - component: {fileID: 2606430001334807260}
+  - component: {fileID: 6434316923050047985}
   m_Layer: 0
   m_Name: Bas
-  m_TagString: Untagged
+  m_TagString: bas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,6 +48,18 @@ MonoBehaviour:
   Obstacles:
   - {fileID: 7928323532715439843, guid: 4fbb9fcd58cc81c44a03c4e27c2fdf58, type: 3}
   - {fileID: 8677564105374907605, guid: 58b44c77bb6aa2848b28d2a2da09cf4c, type: 3}
+--- !u!114 &6434316923050047985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3690736143000952117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7637a9bcae7d2274c93ab7f9ec288701, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5166611038040658705
 GameObject:
   m_ObjectHideFlags: 0
@@ -57,9 +70,10 @@ GameObject:
   m_Component:
   - component: {fileID: 167406751946386310}
   - component: {fileID: 8302881242949615630}
+  - component: {fileID: 3801415602730865306}
   m_Layer: 0
   m_Name: Haut
-  m_TagString: Untagged
+  m_TagString: haut
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,6 +108,18 @@ MonoBehaviour:
   Obstacles:
   - {fileID: 7928323532715439843, guid: 4fbb9fcd58cc81c44a03c4e27c2fdf58, type: 3}
   - {fileID: 8677564105374907605, guid: 58b44c77bb6aa2848b28d2a2da09cf4c, type: 3}
+--- !u!114 &3801415602730865306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5166611038040658705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7637a9bcae7d2274c93ab7f9ec288701, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5563724993692300244
 GameObject:
   m_ObjectHideFlags: 0
@@ -104,9 +130,10 @@ GameObject:
   m_Component:
   - component: {fileID: 597367439765410208}
   - component: {fileID: 6476170051774792658}
+  - component: {fileID: 8059858095681499115}
   m_Layer: 0
   m_Name: Gate
-  m_TagString: Untagged
+  m_TagString: gate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -145,8 +172,21 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.2, y: 20, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.2, y: 2.762168, z: 1}
+  m_Center: {x: 0, y: 1.6346629, z: 0}
+--- !u!114 &8059858095681499115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5563724993692300244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6235ae0d5aeb354c8c38874700e6f1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  touche: 0
 --- !u!1 &7242881298126097543
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,6 +235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee53f2eaa138c7d49abb96228441a6d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed_porto: 3
 --- !u!54 &5053859242987909468
 Rigidbody:
   m_ObjectHideFlags: 0

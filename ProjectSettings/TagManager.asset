@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - portal
+  - gate
+  - haut
+  - bas
   layers:
   - Default
   - TransparentFX

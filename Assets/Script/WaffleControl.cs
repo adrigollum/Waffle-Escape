@@ -6,6 +6,7 @@ public class WaffleControl : MonoBehaviour
 {
     Rigidbody rb;
     [SerializeField] private float jumpSpeed = 5f;
+	private bool mort = false;
 
 	void Start()
     {
@@ -15,7 +16,10 @@ public class WaffleControl : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+
+		
+
+        if (!mort && Input.GetMouseButtonDown(0))
         {
             Jump();
         }
@@ -26,8 +30,16 @@ public class WaffleControl : MonoBehaviour
         rb.velocity = Vector2.up * jumpSpeed;
     }
 
-	
+
+	void OnCollisionEnter(Collision collision)
+	{
 		
-	
-	
+		if (collision.gameObject.tag != "gate")
+		{
+			mort = true;
+		}
+
+	}
+
+
 }

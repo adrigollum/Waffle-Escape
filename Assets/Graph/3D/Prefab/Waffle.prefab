@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2219904569564565501}
   m_Layer: 0
   m_Name: Waffle
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaa39b682bb42644f989cb8e302a597a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpSpeed: 5
 --- !u!54 &682479444468346849
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -81,7 +82,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2560348508133010}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 61e676055aa0dad4dbe2de4adb7a7ec1, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

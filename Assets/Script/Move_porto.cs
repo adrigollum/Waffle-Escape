@@ -7,7 +7,10 @@ public class Move_porto : MonoBehaviour
     Rigidbody rb;
     public float speed_porto= 3f;
 	private bool IsRun;
-    void Start()
+
+
+
+	void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
@@ -21,7 +24,8 @@ public class Move_porto : MonoBehaviour
 
 		rb.velocity = Vector2.left * speed_porto;
 
-		Debug.Log(speed_porto);
+		
+
 
 		if (transform.position.x <= -13)
         {

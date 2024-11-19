@@ -15,6 +15,7 @@ public class Spawn_obs : MonoBehaviour
 	private GameObject[] portoexiste;
 	private float portovit;
 	private float porto_speed = 3f;
+	private int i = 1;
 
 	// Start is called before the first frame update
 	void Start()
@@ -54,25 +55,31 @@ public class Spawn_obs : MonoBehaviour
 
 		if (IsRun == true && delai >= 1f)
 		{
-			delai -= 1f * Time.deltaTime;
-			if (porto_speed <= 10f)
-			{
+			delai -= 10f * Time.deltaTime;
+			
+		}
+
+		if (IsRun == true && porto_speed <= 20f)
+		{
+			
 				porto_speed += 2f * Time.deltaTime;
-			}
+			
 		}
 
 		if (IsRun == false && delai <= 2f)
 		{
-			delai += 1f * Time.deltaTime;
-			if (porto_speed >= 3f)
-			{
+			delai += 10f * Time.deltaTime;
+		}
+
+		if (IsRun == false && porto_speed >= 3f)
+		{
 
 				porto_speed -= 2f * Time.deltaTime;
-			}
+			
 		}
 
 
-		
+
 
 		portoexiste = GameObject.FindGameObjectsWithTag("portal");
 
@@ -81,6 +88,8 @@ public class Spawn_obs : MonoBehaviour
 			portoexistes.GetComponent<Move_porto>().speed_porto = porto_speed;
 			
 		}
+
+		
 		
 
 	}
@@ -91,13 +100,19 @@ public class Spawn_obs : MonoBehaviour
     {
         for (; ; )
         {
-			
-			
-			
+
+
+
 
 			// execute block of code here
-			Instantiate(porto, posporto, Quaternion.identity, transform);
-            yield return new WaitForSeconds(delai);
+			var newObject = (GameObject) Instantiate(porto, posporto, Quaternion.identity, transform);
+
+			newObject.name = i.ToString();
+			GameObject.Find(i + "/Haut").name = i.ToString();
+			GameObject.Find(i + "/Bas").name = i.ToString();
+
+			i++;
+			yield return new WaitForSeconds(delai);
         }
     }
 
