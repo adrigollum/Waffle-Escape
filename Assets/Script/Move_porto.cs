@@ -15,5 +15,9 @@ public class Move_porto : MonoBehaviour
     void Update()
     {
         rb.velocity = Vector2.left * speed_porto;
+        if (transform.position.x <= -13)
+        {
+            Destroy(gameObject);
+        }
     }
 }

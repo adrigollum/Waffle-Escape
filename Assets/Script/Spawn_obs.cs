@@ -12,7 +12,7 @@ public class Spawn_obs : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        posporto = transform.position + new Vector3(0, yporto, 0);
+        posporto = transform.position + new Vector3(0, yporto, 0);        
         StartCoroutine("Spawner");
         
 
