@@ -6,7 +6,7 @@ using TMPro;
 public class Score_credit : MonoBehaviour
 {
 	
-	public int scorec = Score.score;
+	
 
 	// Start is called before the first frame update
 	void Start()
@@ -17,7 +17,6 @@ public class Score_credit : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-
-		GetComponent<TextMeshPro>().text = scorec.ToString();
+		GetComponent<TextMeshPro>().text = Score.score.ToString();
 	}
 }
