@@ -206,6 +206,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6533141234287035734, guid: 765ac621677e9db4f85b0f108819d352, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1692,7 +1696,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 975481dcd0be9ae40954e83db08a3eb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scorec: 0
 --- !u!1 &1063725428
 GameObject:
   m_ObjectHideFlags: 0
