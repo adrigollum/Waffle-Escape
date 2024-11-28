@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Touché : MonoBehaviour
 {
@@ -44,6 +45,8 @@ public class Touché : MonoBehaviour
 			{
 				transform.Translate(Vector3.up * -10 * Time.deltaTime);
 			}
+
+			
 		}
 
 		if (GameObject.FindGameObjectWithTag("Player").GetComponent<WaffleControl>().mort == true)
@@ -55,6 +58,14 @@ public class Touché : MonoBehaviour
 			else if (this.tag == "bas" && transform.position.y <= 0)
 			{
 				transform.Translate(Vector3.up * 6.25f * Time.deltaTime);
+			}
+			if (this.tag == "haut" && transform.position.y <= 0)
+			{
+				SceneManager.LoadScene("Credits", LoadSceneMode.Single);
+			}
+			if (this.tag == "bas" && transform.position.y >=0)
+			{
+				SceneManager.LoadScene("Credits", LoadSceneMode.Single);
 			}
 		}
 
