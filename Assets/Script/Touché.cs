@@ -9,6 +9,8 @@ public class Touché : MonoBehaviour
 
 	private GameObject[] Gatexiste;
 	private bool touche = false;
+	private float secondsLeft ;
+
 	// Start is called before the first frame update
 	void Start()
     {
@@ -59,16 +61,23 @@ public class Touché : MonoBehaviour
 			{
 				transform.Translate(Vector3.up * 6.25f * Time.deltaTime);
 			}
-			if (this.tag == "haut" && transform.position.y <= 0)
-			{
-				SceneManager.LoadScene("Credits", LoadSceneMode.Single);
-			}
-			if (this.tag == "bas" && transform.position.y >=0)
-			{
-				SceneManager.LoadScene("Credits", LoadSceneMode.Single);
-			}
+			
+				StartCoroutine(DelayLoadlevel(1));
+			
 		}
 
 
+	}
+
+	IEnumerator DelayLoadlevel(float seconds)
+	{
+		yield return new WaitForSeconds(1);
+		secondsLeft = seconds;
+		do
+		{
+			yield return new WaitForSeconds(1);
+		} while (--secondsLeft > 0);
+
+		SceneManager.LoadScene("Credits", LoadSceneMode.Single);
 	}
 }
