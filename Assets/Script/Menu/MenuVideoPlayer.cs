@@ -52,6 +52,6 @@ void PlayGame(VideoPlayer vp)
 
 void PlayCredits(VideoPlayer vp)
 {
-    SceneManager.LoadScene("Credits", LoadSceneMode.Single);
+    SceneManager.LoadScene("Credits");
 } 
 }
