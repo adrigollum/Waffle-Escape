@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuVideoManager : MonoBehaviour
 {
-    public VideoPlayer introVideo; 
+    public VideoPlayer introVideo; //puz
     public VideoPlayer menuVideo; 
     public VideoPlayer transitionVideo; 
 
