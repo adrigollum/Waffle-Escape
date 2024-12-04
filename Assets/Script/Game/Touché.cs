@@ -53,11 +53,11 @@ public class Touché : MonoBehaviour
 
 		if (GameObject.FindGameObjectWithTag("Player").GetComponent<WaffleControl>().mort == true)
 		{
-			if (this.tag == "haut" && transform.position.y >=0)
+			if (this.tag == "haut" && transform.position.y >=6.25)
 			{
 				transform.Translate(Vector3.up * -6.25f * Time.deltaTime);
 			}
-			else if (this.tag == "bas" && transform.position.y <= 0)
+			else if (this.tag == "bas" && transform.position.y <= -2.75)
 			{
 				transform.Translate(Vector3.up * 6.25f * Time.deltaTime);
 			}
