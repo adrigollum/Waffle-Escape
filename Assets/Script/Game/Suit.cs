@@ -26,13 +26,13 @@ public class Suit : MonoBehaviour
 		dify = posjoy - transform.position.y;
 		gameObject.transform.Translate(Vector3.up * dify * Time.deltaTime);
 
-		if (Input.GetMouseButton(1))
+		if (Input.GetMouseButton(1)|| Input.GetKey("left shift"))
 		{
 			IsRun = true;
 
 		}
 
-		if (Input.GetMouseButtonUp(1))
+		if (Input.GetMouseButtonUp(1)|| Input.GetKeyUp("left shift"))
 		{
 			IsRun = false;
 		}

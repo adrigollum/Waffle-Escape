@@ -42,13 +42,13 @@ public class Spawn_obs : MonoBehaviour
         }
         posporto = transform.position + new Vector3(0, yporto, 0);
 
-		if (Input.GetMouseButton(1))
+		if (Input.GetMouseButton(1)|| Input.GetKey("left shift"))
 			{
 				IsRun = true;
 
 			}
 
-			if (Input.GetMouseButtonUp(1))
+			if (Input.GetMouseButtonUp(1)|| Input.GetKeyUp("left shift"))
 			{
 				IsRun = false;
 			}
