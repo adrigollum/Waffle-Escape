@@ -19,7 +19,7 @@ public class Waffle_Run : MonoBehaviour
 	private void Update()
 	{
 
-		if (Input.GetMouseButton(1))
+		if (Input.GetMouseButton(1)|| Input.GetKey("left shift"))
 		{
 			IsRun = true;
 			if (transform.position.x <= 2)
@@ -29,7 +29,7 @@ public class Waffle_Run : MonoBehaviour
 
 		}
 
-		if (Input.GetMouseButtonUp(1))
+		if (Input.GetMouseButtonUp(1)|| Input.GetKeyUp("left shift"))
 		{
 			IsRun = false;
 

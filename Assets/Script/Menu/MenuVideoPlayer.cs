@@ -4,9 +4,9 @@ using UnityEngine.SceneManagement;
 
 public class MenuVideoManager : MonoBehaviour
 {
-    public VideoPlayer introVideo; 
-    public VideoPlayer menuVideo; 
-    public VideoPlayer transitionVideo; 
+    [SerializeField] private VideoPlayer introVideo; //puz
+    [SerializeField] private VideoPlayer menuVideo; 
+    [SerializeField] private VideoPlayer transitionVideo; 
 
     private bool isTransitioning = false; 
     private string nextScene; 
@@ -52,6 +52,6 @@ void PlayGame(VideoPlayer vp)
 
 void PlayCredits(VideoPlayer vp)
 {
-    SceneManager.LoadScene("Credits", LoadSceneMode.Single);
+    SceneManager.LoadScene("Credits");
 } 
 }

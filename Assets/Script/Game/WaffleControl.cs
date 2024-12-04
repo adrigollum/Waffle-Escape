@@ -19,7 +19,7 @@ public class WaffleControl : MonoBehaviour
 
 		
 
-        if (!mort && Input.GetMouseButtonDown(0))
+        if (!mort && (Input.GetMouseButtonDown(0) || Input.GetKeyDown("space")))
         {
             Jump();
         }
