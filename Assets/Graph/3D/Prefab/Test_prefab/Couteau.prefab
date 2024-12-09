@@ -151,6 +151,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -85.499
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 99a09a84c9c16f4459dcfb26dd4fa2b9, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b6bd0334640dd974caed043ee6e77701, type: 2}
     - target: {fileID: 919132149155446097, guid: 99a09a84c9c16f4459dcfb26dd4fa2b9, type: 3}
       propertyPath: m_Name
       value: couteau

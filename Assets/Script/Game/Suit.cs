@@ -44,7 +44,7 @@ public class Suit : MonoBehaviour
 		{
 			if (Mathf.Abs(difx) <= 2)
 			{
-				gameObject.transform.Translate(Vector3.right * difx*4 * Time.deltaTime);
+				gameObject.transform.Translate(Vector3.right * difx*3 * Time.deltaTime);
 			}
 			gameObject.transform.Translate(Vector3.right * difx/2 * Time.deltaTime);
 		}
