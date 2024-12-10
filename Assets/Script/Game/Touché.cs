@@ -62,7 +62,7 @@ public class Touché : MonoBehaviour
 				transform.Translate(Vector3.up * 6.25f * Time.deltaTime);
 			}
 			
-				StartCoroutine(DelayLoadlevel(1));
+				StartCoroutine(DelayLoadlevel(0.5f));
 			
 		}
 
@@ -71,11 +71,11 @@ public class Touché : MonoBehaviour
 
 	IEnumerator DelayLoadlevel(float seconds)
 	{
-		yield return new WaitForSeconds(1);
+		yield return new WaitForSeconds(0.5f);
 		secondsLeft = seconds;
 		do
 		{
-			yield return new WaitForSeconds(1);
+			yield return new WaitForSeconds(0.5f);
 		} while (--secondsLeft > 0);
 
 		SceneManager.LoadScene("ScoreScene", LoadSceneMode.Single);
