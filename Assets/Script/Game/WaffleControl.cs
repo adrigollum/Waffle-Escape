@@ -7,10 +7,12 @@ public class WaffleControl : MonoBehaviour
     Rigidbody rb;
     [SerializeField] private float jumpSpeed = 5f;
 	public bool mort = false;
+	AudioSource audioData;
 
 	void Start()
     {
-        rb = GetComponent<Rigidbody>();
+		audioData = GetComponent<AudioSource>();
+		rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -28,7 +30,8 @@ public class WaffleControl : MonoBehaviour
     private void Jump()
     {
         rb.velocity = Vector2.up * jumpSpeed;
-    }
+		audioData.Play(0);
+	}
 
 
 	void OnCollisionEnter(Collision collision)
