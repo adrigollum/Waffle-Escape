@@ -1,41 +1,54 @@
 using UnityEngine;
 using UnityEngine.Video;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MenuVideoManager : MonoBehaviour
 {
-    [SerializeField] private VideoPlayer introVideo; //puz
+    [SerializeField] private VideoPlayer introVideo; 
     [SerializeField] private VideoPlayer menuVideo; 
     [SerializeField] private VideoPlayer transitionVideo; 
+    [SerializeField] private Button playButton; // Référence au bouton Play
+    [SerializeField] private Button creditsButton; // Référence au bouton Credits
 
-    private bool isTransitioning = false; 
-    private string nextScene; 
     void Start()
-{
-    
-    introVideo.Play();
-    introVideo.loopPointReached += EndIntroVideo; 
-}
+    {
+        // Désactiver les boutons au début
+        playButton.gameObject.SetActive(false);
+        creditsButton.gameObject.SetActive(false);
 
- void EndIntroVideo(VideoPlayer vp)
-{
-   
-    ShowMenu();
-}
+        introVideo.Play();
+        introVideo.loopPointReached += EndIntroVideo; 
+    }
 
-void ShowMenu()
-{
-    
-    menuVideo.Play();
-}
+    void EndIntroVideo(VideoPlayer vp)
+    {
+        ShowMenu();
+    }
 
-public void OnButtonClick(string action)
+    void ShowMenu()
+    {
+        menuVideo.Play();
+        
+        // Activer les boutons
+        playButton.gameObject.SetActive(true);
+        creditsButton.gameObject.SetActive(true);
+        
+        // Jouer l'animation d'apparition
+        playButton.GetComponent<Animator>().SetTrigger("Appear");
+        creditsButton.GetComponent<Animator>().SetTrigger("Appear");
+    }
+
+    public void OnButtonClick(string action)
 {
- 
+    // Jouer l'animation de disparition
+    playButton.GetComponent<Animator>().SetTrigger("Disappear");
+    creditsButton.GetComponent<Animator>().SetTrigger("Disappear");
+
+    // Arrêter la vidéo et jouer la transition
     menuVideo.Stop(); 
     transitionVideo.Play(); 
 
- 
     if (action == "PlayGame")
     {
         transitionVideo.loopPointReached += PlayGame; 
@@ -43,15 +56,16 @@ public void OnButtonClick(string action)
     else if (action == "PlayCredits")
     {
         transitionVideo.loopPointReached += PlayCredits;
-}
-}
-void PlayGame(VideoPlayer vp)
-{
-    SceneManager.LoadScene("Test");
+    }
 }
 
-void PlayCredits(VideoPlayer vp)
-{
-    SceneManager.LoadScene("Credits");
-} 
+    void PlayGame(VideoPlayer vp)
+    {
+        SceneManager.LoadScene("Test");
+    }
+
+    void PlayCredits(VideoPlayer vp)
+    {
+        SceneManager.LoadScene("Credits");
+    } 
 }
