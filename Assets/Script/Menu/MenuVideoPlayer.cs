@@ -59,12 +59,12 @@ public class MenuVideoManager : MonoBehaviour
     }
 }
 
-    void PlayGame(VideoPlayer vp)
+    [SerializeField] private void PlayGame(VideoPlayer vp)
     {
         SceneManager.LoadScene("Test");
     }
 
-    void PlayCredits(VideoPlayer vp)
+    [SerializeField] private void PlayCredits(VideoPlayer vp)
     {
         SceneManager.LoadScene("Credits");
     } 

@@ -78,6 +78,6 @@ public class Touché : MonoBehaviour
 			yield return new WaitForSeconds(1);
 		} while (--secondsLeft > 0);
 
-		SceneManager.LoadScene("Credits", LoadSceneMode.Single);
+		SceneManager.LoadScene("ScoreScene", LoadSceneMode.Single);
 	}
 }
