@@ -12,12 +12,10 @@ public class Touché : MonoBehaviour
 	private float secondsLeft ;
  	private GameObject player;
 
-	private Animator animator;
 	// Start is called before the first frame update
 	void Start()
     {
          player = GameObject.FindGameObjectWithTag("Player"); 
-		 animator = player.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -56,20 +54,6 @@ public class Touché : MonoBehaviour
 
 		if (GameObject.FindGameObjectWithTag("Player").GetComponent<WaffleControl>().mort == true) 
 		{
-			// Désactiver les scripts WaffleControl et WaffleRun
-            WaffleControl waffleControl = player.GetComponent<WaffleControl>();
-            Waffle_Run waffleRun = player.GetComponent<Waffle_Run>();
-
-            if (waffleControl != null)
-            {
-                waffleControl.enabled = false; // Désactive le script WaffleControl
-            }
-
-            if (waffleRun != null)
-            {
-                waffleRun.enabled = false; // Désactive le script WaffleRun
-            }
-			animator.enabled = true;
 			player.GetComponent<Animator>().SetTrigger("Dead");
 			if (this.tag == "haut" && transform.position.y >=6.25)
 			{
