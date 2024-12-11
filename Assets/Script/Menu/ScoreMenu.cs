@@ -14,13 +14,13 @@ public class ScoreMenu : MonoBehaviour
    
   public void PlayGame()
 {
-    Debug.Log("PlayGame clicked");
-    SceneManager.LoadScene("Test");
+    
+    SceneManager.LoadScene("Game");
 }
 
 public void PlayCredits()
 {
-    Debug.Log("PlayCredits clicked");
+    
     SceneManager.LoadScene("Credits");
 }
 }

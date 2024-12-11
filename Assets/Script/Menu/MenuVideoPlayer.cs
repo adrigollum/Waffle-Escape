@@ -61,7 +61,7 @@ public class MenuVideoManager : MonoBehaviour
 
     [SerializeField] private void PlayGame(VideoPlayer vp)
     {
-        SceneManager.LoadScene("Test");
+        SceneManager.LoadScene("Game");
     }
 
     [SerializeField] private void PlayCredits(VideoPlayer vp)
