@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Touché : MonoBehaviour
+public class Touche : MonoBehaviour
 {
 
 
@@ -12,10 +12,12 @@ public class Touché : MonoBehaviour
 	private float secondsLeft ;
  	private GameObject player;
 
-	// Start is called before the first frame update
-	void Start()
+
+    // Start is called before the first frame update
+    void Start()
     {
          player = GameObject.FindGameObjectWithTag("Player"); 
+
     }
 
     // Update is called once per frame
@@ -30,8 +32,10 @@ public class Touché : MonoBehaviour
 			{
 				if (i.transform.parent.name == transform.name)
 				{
-					touche = true;
-				}
+                    
+                    touche = true;
+                    
+                }
 				
 			}
 
@@ -40,7 +44,8 @@ public class Touché : MonoBehaviour
 
 		if (touche == true)
 		{
-			if (this.tag == "haut")
+            
+            if (this.tag == "haut")
 			{
 				transform.Translate(Vector3.up * -10 * Time.deltaTime);
 			}
@@ -54,8 +59,13 @@ public class Touché : MonoBehaviour
 
 		if (GameObject.FindGameObjectWithTag("Player").GetComponent<WaffleControl>().mort == true) 
 		{
-			player.GetComponent<Animator>().SetTrigger("Dead");
-			if (this.tag == "haut" && transform.position.y >=6.25)
+           
+
+
+			
+            player.GetComponent<Animator>().SetTrigger("Dead");
+			
+            if (this.tag == "haut" && transform.position.y >=6.25)
 			{
 				transform.Translate(Vector3.up * 6.25f * Time.deltaTime);
 			}
@@ -64,7 +74,7 @@ public class Touché : MonoBehaviour
 				transform.Translate(Vector3.up * 6.25f * Time.deltaTime);
 			}
 			
-				StartCoroutine(DelayLoadlevel(1));
+				StartCoroutine(DelayLoadlevel(0.5f));
 			
 		}
 
@@ -73,11 +83,11 @@ public class Touché : MonoBehaviour
 
 	IEnumerator DelayLoadlevel(float seconds)
 	{
-		yield return new WaitForSeconds(1);
+		yield return new WaitForSeconds(0.5f);
 		secondsLeft = seconds;
 		do
 		{
-			yield return new WaitForSeconds(1);
+			yield return new WaitForSeconds(0.5f);
 		} while (--secondsLeft > 0);
 
 		SceneManager.LoadScene("ScoreScene", LoadSceneMode.Single);
