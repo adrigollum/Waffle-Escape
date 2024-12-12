@@ -18,7 +18,7 @@ public class Pass_portal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+		Debug.Log(Suit.EnemySpeed);
     }
 
 	private void OnTriggerEnter(Collider other)
@@ -30,6 +30,13 @@ public class Pass_portal : MonoBehaviour
 				touche = true;
 				Score.score += 1;
 				audioData.Play(0);
+				if(Score.score %15 == 0 && Suit.EnemySpeed < 3)
+				{
+					Suit.EnemySpeed *= 1.2f;
+					
+				}
+			
+
 			}
 			
 		}

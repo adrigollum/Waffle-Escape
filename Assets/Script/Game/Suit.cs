@@ -12,6 +12,8 @@ public class Suit : MonoBehaviour
 	private float difx;
 	private bool IsRun;
 
+	public static float EnemySpeed = 0.3f ;
+
 
 	// Start is called before the first frame update
 	void Start()
@@ -39,14 +41,15 @@ public class Suit : MonoBehaviour
 
 		posjox = jo.transform.position.x;
 		difx = posjox - transform.position.x;
-
+		
+		
 		if (IsRun == false && jo.transform.position.x <= 0)
 		{
 			if (Mathf.Abs(difx) <= 2)
 			{
-				gameObject.transform.Translate(Vector3.right * difx*3 * Time.deltaTime);
+				gameObject.transform.Translate(Vector3.right * difx* EnemySpeed * 1.5f * Time.deltaTime);
 			}
-			gameObject.transform.Translate(Vector3.right * difx/2 * Time.deltaTime);
+			gameObject.transform.Translate(Vector3.right * difx* EnemySpeed * Time.deltaTime);
 		}
 
 		if (IsRun == true && jo.transform.position.x >= -8)
