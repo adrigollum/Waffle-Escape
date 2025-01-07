@@ -286,6 +286,7 @@ GameObject:
   m_Component:
   - component: {fileID: 108379962}
   - component: {fileID: 108379961}
+  - component: {fileID: 108379963}
   m_Layer: 5
   m_Name: Boucle
   m_TagString: Untagged
@@ -311,13 +312,13 @@ VideoPlayer:
   m_TargetMaterialProperty: <noninit>
   m_RenderMode: 2
   m_AspectRatio: 2
-  m_DataSource: 0
+  m_DataSource: 1
   m_TimeUpdateMode: 2
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 2
   m_TargetAudioSources: []
   m_DirectAudioVolumes: []
-  m_Url: 
+  m_Url: https://github.com/adrigollum/Waffle-Escape/blob/main/Assets/Graph/2D/Video/Menu/Waffle%20video.mp4
   m_EnabledAudioTracks: 
   m_DirectAudioMutes: 
   m_ControlledAudioTrackCount: 0
@@ -346,6 +347,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &108379963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108379960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91ec27313bd6f324683a55f7189a08ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  videoFileName: WaffleMenu.mp4
 --- !u!1 &122727947
 GameObject:
   m_ObjectHideFlags: 0
@@ -822,7 +836,7 @@ VideoPlayer:
   m_TargetMaterialProperty: <noninit>
   m_RenderMode: 2
   m_AspectRatio: 2
-  m_DataSource: 0
+  m_DataSource: 1
   m_TimeUpdateMode: 2
   m_PlaybackSpeed: 1.21
   m_AudioOutputMode: 2
@@ -830,7 +844,7 @@ VideoPlayer:
   - {fileID: 0}
   m_DirectAudioVolumes:
   - 1
-  m_Url: 
+  m_Url: https://github.com/adrigollum/Waffle-Escape/blob/main/Assets/Graph/2D/Video/Menu/Waffle%20video.mp4
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
@@ -1585,6 +1599,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1591258181}
   - component: {fileID: 1591258180}
+  - component: {fileID: 1591258182}
   m_Layer: 5
   m_Name: Outro
   m_TagString: Untagged
@@ -1610,7 +1625,7 @@ VideoPlayer:
   m_TargetMaterialProperty: <noninit>
   m_RenderMode: 2
   m_AspectRatio: 2
-  m_DataSource: 0
+  m_DataSource: 1
   m_TimeUpdateMode: 2
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 2
@@ -1647,6 +1662,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1591258182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1591258179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91ec27313bd6f324683a55f7189a08ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  videoFileName: ExitMenu.mp4
 --- !u!1 &1648459961
 GameObject:
   m_ObjectHideFlags: 0
