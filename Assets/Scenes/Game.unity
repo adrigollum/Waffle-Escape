@@ -1237,6 +1237,7 @@ GameObject:
   - component: {fileID: 1716554544}
   - component: {fileID: 1716554547}
   - component: {fileID: 1716554548}
+  - component: {fileID: 1716554549}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1328,7 +1329,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a8139d0ccad36644184b45ed40d559fa, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 0.3
   m_Pitch: 1
@@ -1474,6 +1475,20 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &1716554549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716554543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 161149028dddefe44ab23abf4fde3365, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 1716554547}
+  audioClip: {fileID: 8300000, guid: 24cdc62da358f934998b438cdf6645be, type: 3}
 --- !u!1 &1958800142
 GameObject:
   m_ObjectHideFlags: 0

@@ -18,7 +18,7 @@ public class Pass_portal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		Debug.Log(Suit.EnemySpeed);
+		
     }
 
 	private void OnTriggerEnter(Collider other)
