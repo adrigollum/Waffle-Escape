@@ -15,19 +15,30 @@ public class MenuVideoManager : MonoBehaviour
     [SerializeField] private GameObject commandsImage; 
     [SerializeField] private GameObject Bestscore;
 
-    [SerializeField] string[] videoFileName; 
+    public string[] videoFileName; 
 
     private bool isBestscoreAppearing = false;
 
     void Start()
     {
         // Désactiver les boutons au début
+        introVideo.enabled = true;
+        introVideo.gameObject.SetActive(true);
+        menuVideo.enabled = false;
+        menuVideo.gameObject.SetActive(false);
+        transitionVideo.enabled = false;
+        transitionVideo.gameObject.SetActive(false);
+        
         playButton.gameObject.SetActive(false);
         creditsButton.gameObject.SetActive(false);
         commandsButton.gameObject.SetActive(false); 
         
         // Désactiver l'image des commandes
         commandsImage.SetActive(false);
+
+        videoFileName[0] = "EnterMenu.mp4"; 
+        videoFileName[1] = "menu.mp4"; 
+        videoFileName[2] = "ExitMenu.mp4"; 
 
         if(introVideo) 
         {
@@ -36,6 +47,9 @@ public class MenuVideoManager : MonoBehaviour
         introVideo.url = videoPath;
         introVideo.Play();
         introVideo.loopPointReached += EndIntroVideo; 
+
+       
+
         }
 
         
@@ -53,34 +67,41 @@ public class MenuVideoManager : MonoBehaviour
 
     void EndIntroVideo(VideoPlayer vp)
     {
+        introVideo.Stop();
+        introVideo.enabled = false;
+        introVideo.gameObject.SetActive(false);
+        menuVideo.enabled = true;
+        menuVideo.gameObject.SetActive(true);
         ShowMenu();
     }
 
     void ShowMenu()
-    {
-        
-        string videoPath1 = System.IO.Path.Combine(Application.streamingAssetsPath, videoFileName[1]);
-        Debug.Log(videoPath1);
-        menuVideo.url = videoPath1;
-        menuVideo.Play();
-        
-        
-        playButton.gameObject.SetActive(true);
-        creditsButton.gameObject.SetActive(true);
-        commandsButton.gameObject.SetActive(true); 
-        Bestscore.SetActive(true);
-        
-        // Vérifiez si l'animation "Appear" a déjà été jouée pour Bestscore
-            playButton.GetComponent<Animator>().SetTrigger("Appear");
-            creditsButton.GetComponent<Animator>().SetTrigger("Appear");
-            commandsButton.GetComponent<Animator>().SetTrigger("Appear"); 
-            Bestscore.GetComponent<Animator>().SetBool("IsAppearing", true);
-            isBestscoreAppearing = true;
+{
 
-            // Activer le booléen "IsTinting" après "Appear"
-            Bestscore.GetComponent<Animator>().SetBool("IsTinting", true);
-        
-    }
+    string videoPath1 = System.IO.Path.Combine(Application.streamingAssetsPath, videoFileName[1]);
+    Debug.Log($"Menu video path: {videoPath1}");
+
+    
+    menuVideo.url = videoPath1;
+    menuVideo.url = videoPath1;
+    menuVideo.Prepare(); // Prépare la vidéo
+    menuVideo.prepareCompleted += (source) => 
+    menuVideo.Play();
+    
+    // Boutons et animations
+    playButton.gameObject.SetActive(true);
+    creditsButton.gameObject.SetActive(true);
+    commandsButton.gameObject.SetActive(true); 
+    Bestscore.SetActive(true);
+
+    playButton.GetComponent<Animator>().SetTrigger("Appear");
+    creditsButton.GetComponent<Animator>().SetTrigger("Appear");
+    commandsButton.GetComponent<Animator>().SetTrigger("Appear");
+    Bestscore.GetComponent<Animator>().SetBool("IsAppearing", true);
+    isBestscoreAppearing = true;
+
+    Bestscore.GetComponent<Animator>().SetBool("IsTinting", true);
+}
 
     public void OnButtonClick(string action)
     {
@@ -88,12 +109,18 @@ public class MenuVideoManager : MonoBehaviour
         creditsButton.GetComponent<Animator>().SetTrigger("Disappear");
         commandsButton.GetComponent<Animator>().SetTrigger("Disappear"); 
         Bestscore.GetComponent<Animator>().SetTrigger("Disappear");
-        menuVideo.Stop(); 
+        menuVideo.Stop();
+        menuVideo.enabled = false;
+        menuVideo.gameObject.SetActive(false);
+        transitionVideo.enabled = true;
+        transitionVideo.gameObject.SetActive(true);
         if(transitionVideo) 
         {
         string videoPath2 = System.IO.Path.Combine(Application.streamingAssetsPath, videoFileName[2]);
         Debug.Log(videoPath2);
         transitionVideo.url = videoPath2;
+        transitionVideo.Prepare(); // Prépare la vidéo
+        transitionVideo.prepareCompleted += (source) => 
         transitionVideo.Play();
         } 
 
