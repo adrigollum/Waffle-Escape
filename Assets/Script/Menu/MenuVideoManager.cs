@@ -3,6 +3,7 @@ using UnityEngine.Video;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+
 public class MenuVideoManager : MonoBehaviour
 {
     [SerializeField] private VideoPlayer introVideo; 
@@ -13,6 +14,8 @@ public class MenuVideoManager : MonoBehaviour
     [SerializeField] private Button commandsButton; 
     [SerializeField] private GameObject commandsImage; 
     [SerializeField] private GameObject Bestscore;
+
+    [SerializeField] string[] videoFileName; 
 
     private bool isBestscoreAppearing = false;
 
@@ -26,8 +29,16 @@ public class MenuVideoManager : MonoBehaviour
         // Désactiver l'image des commandes
         commandsImage.SetActive(false);
 
+        if(introVideo) 
+        {
+        string videoPath = System.IO.Path.Combine(Application.streamingAssetsPath, videoFileName[0]);
+        Debug.Log(videoPath);
+        introVideo.url = videoPath;
         introVideo.Play();
         introVideo.loopPointReached += EndIntroVideo; 
+        }
+
+        
     }
 
     void Update()
@@ -47,7 +58,12 @@ public class MenuVideoManager : MonoBehaviour
 
     void ShowMenu()
     {
+        
+        string videoPath1 = System.IO.Path.Combine(Application.streamingAssetsPath, videoFileName[1]);
+        Debug.Log(videoPath1);
+        menuVideo.url = videoPath1;
         menuVideo.Play();
+        
         
         playButton.gameObject.SetActive(true);
         creditsButton.gameObject.SetActive(true);
@@ -73,7 +89,13 @@ public class MenuVideoManager : MonoBehaviour
         commandsButton.GetComponent<Animator>().SetTrigger("Disappear"); 
         Bestscore.GetComponent<Animator>().SetTrigger("Disappear");
         menuVideo.Stop(); 
-        transitionVideo.Play(); 
+        if(transitionVideo) 
+        {
+        string videoPath2 = System.IO.Path.Combine(Application.streamingAssetsPath, videoFileName[2]);
+        Debug.Log(videoPath2);
+        transitionVideo.url = videoPath2;
+        transitionVideo.Play();
+        } 
 
         if (action == "PlayGame")
         {
@@ -85,7 +107,7 @@ public class MenuVideoManager : MonoBehaviour
         }
     }
 
-    private void OnCommandsButtonClick()
+    public void OnCommandsButtonClick()
     {
         commandsImage.SetActive(!commandsImage.activeSelf);
 

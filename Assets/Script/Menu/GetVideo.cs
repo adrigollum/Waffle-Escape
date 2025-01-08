@@ -20,9 +20,10 @@ public class GetVideo : MonoBehaviour
 
         if (videoPlayer)
         {
-            string videoPath = System.IO.Path.Combine(Application.dataPath, "Graph", "2D", "Video", "Menu", videoFileName);
+            string videoPath = System.IO.Path.Combine(Application.streamingAssetsPath, videoFileName);
             Debug.Log(videoPath); 
             videoPlayer.url = videoPath; 
+            videoPlayer.Play();
         }
     }
 }
